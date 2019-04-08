@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        window.onload=shijian
+        function shijian(){
+        var xianz = new Date();
+        var weilai = new Date("2019-6-6");
+        var xianz1 = xianz.getTime();
+        var weilai2 = weilai.getTime();
+        var hm = weilai2 - xianz1;
+        var tisu = hm/1000/60/60/24;
+        var ms = hm/1000%60
+        var fz = hm/1000/60%60
+        var xs = hm/1000/60/60%24
+        var ts1 = Math.floor(tisu)
+        var ms1 = Math.floor(ms)
+        var fz1 = Math.floor(fz)
+        var xs1 = Math.floor(xs);
+        document.querySelector("div").innerHTML=("距离2019年6月6日还有"+ts1+"天"+xs1+"小时"+fz1+"分钟"+ms1+"秒")
+        setInterval(shijian,500)
+        }
+    </script>
+</body>
+
+</html>

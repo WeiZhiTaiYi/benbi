@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="emil">
+    <button>按钮</button>
+    <script src="jquery.js"></script>
+    <script>
+        var num =/^[0-9A-Za-z][\.-_0-9A-Za-z]*@[0-9A-Za-z]+(\.[0-9A-Za-z]+)+$/
+        $("button").click(function(){
+            // var emil1 = emil.value
+            if(num.test(emil.value)){
+                alert("邮箱格式正确")
+            }else{
+                alert("邮箱格式错误")
+            }
+        })
+    </script>
+</body>
+</html>

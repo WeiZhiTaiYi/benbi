@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            list-style: none;
+            float: left;
+        }
+        img{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <img src="renwu.png" alt="" id="tu">
+        <li id="num1">1</li>
+        <li id="num2">2</li>
+        <li id="num3">3</li>
+        <li id="num4">4</li>
+    </ul>
+    <script>
+        var num1 = document.querySelector("#num1")
+        var num2 = document.querySelector("#num2")
+        var num3 = document.querySelector("#num3")
+        var num4 = document.querySelector("#num4")
+        var tu = document.querySelector("#tu")
+        num1.onclick = function(){
+            tu.src = "renwu.png"
+        }
+        num2.onclick = function(){
+            tu.src = "adidasi1.png"
+        }
+        num3.onclick = function(){
+            tu.src = "logo2.png"
+        }
+        num4.onclick = function(){
+            tu.src = "daiz.png"
+        }
+    </script>
+</body>
+</html>
