@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app"> 
+        <p>{{ studentName }}</p>
+        <input type="button" value="抽取幸运观众"@click="getName" >
+        <input type="button" value="停止"  @click='stop'>
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                studentName: '同学名字',
+                stoper:null,
+                list:[
+                    '赵广远',
+                    '戴广喻',
+                    '潘广鑫',
+                    '大广',
+                    'tu广'
+                ]
+            },
+            methods:{
+                stop(){
+                    clearInterval(this.stoper)
+                },
+                getName(){
+                   this.stoper = setInterval(()=>{
+                        this.studentName=this.list[this.soon()]
+                    },0)
+                },
+                soon(){
+                  return  Math.floor(Math.random()*this.list.length)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
