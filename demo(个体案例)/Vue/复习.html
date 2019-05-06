@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        input {
+            width: 25px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="button" value="+" @click="NumberIncrease">
+        <span>{{ msg }}</span>
+        <input type="button" value="-" @click="reduced">
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '0'
+            },
+            methods: {
+                NumberIncrease() {
+                    this.msg++
+                },
+                reduced() {
+                    this.msg--
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        ul {
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='Text'>
+        <input type="button" value="添加" @click='add'>
+        <ul v-for="value,i in list">
+            <li>{{ value }}</li>
+        </ul>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                Text: '',
+                list: [
+                    '香蕉',
+                    '苹果',
+                    '鸭梨',
+                ]
+            },
+            methods: {
+                add() {
+                    if (Text != '') {
+                        this.list.push(this.Text)
+                        this.Text = ''
+                    } else {
+                        alert("请输入要添加的水果")
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
